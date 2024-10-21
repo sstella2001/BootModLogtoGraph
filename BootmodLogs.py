@@ -27,7 +27,7 @@ def make_graph(y_axis, path, gears):
     for i in range(gears):
         plots.append([])
 
-    fig = make_subplots(rows=gears, cols=1, subplot_titles=("Gear 1", "Gear 2", "Gear 3", "Gear 4", "Gear 5"), x_title="Engine Speed (RPM)", y_title=y_axis)
+    fig = make_subplots(rows=gears, cols=1, subplot_titles=tuple([f"Gear {i}" for i in range(1, gears+1)]), x_title="Engine Speed (RPM)", y_title=y_axis)
 
     for filename in os.listdir(path):
         if filename.endswith(".csv"):
